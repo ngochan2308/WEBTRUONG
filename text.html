@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {background-color: green;}
+div a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  padding: 15px;
+  display:inline-block;
+}
+ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+ul li {display: inline-block;}
+ul li:hover {background: #555;}
+ul li:hover ul {display: block;}
+ul li ul {
+  position: absolute;
+  width: 200px;
+  display: none;
+}
+ul li ul li { 
+  background: #555; 
+  display: block; 
+}
+ul li ul li a {display:block !important;} 
+ul li ul li:hover {background: #666;}
+</style>
+</head>
+<body>
+
+<div>
+  <ul>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Giới Thiệu
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Lược sử</a></li>
+          <li><a class="dropdown-item" href="#">Mục tiêu-sứ mạng-tầm nhìn</a></li>
+          <li><a class="dropdown-item" href="#">Kế hoạch chiến lược</a></li>
+          <li><a class="dropdown-item" href="#">Bộ máy tổ chức</a></li>
+        </ul>
+      </li>
+  </ul>
+</div>
+
+</body>
+</html>
