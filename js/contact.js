@@ -13,28 +13,18 @@ function SendInfo() {
         return;
     }
 
-   
-    //check mail
-    if (email == ""|email==null||email==undefined) {
-        alert("Vui lòng nhập email!")
+     //check mail
+     if (validateEmail(email) === false || (validateEmail(email) === null) ) {
+        alert("Email không hợp lệ!")
         return;
     }
-    
-    // if (validateEmail(email) === false || validateEmail(email) === null) {
-    //     alert("Email khong hop le!")
-    //     return;
-    // }
 
     //check phone
-    if (phone == ""|phone==null||phone==undefined) {
-        alert("Vui lòng nhập số điện thoại!")
+    if (validatePhone(phone) === false || (validatePhone(phone) === null)) {
+        alert("Số điện thoại không hợp lệ!")
         return;
     }
-    // if (validatePhone(phone) === false || (validatePhone(phone) === null)) {
-    //     alert("Dien thoai khong hop le!")
-    //     return;
-    // }
-    
+  
     //don vi
     if (donvi == ""||donvi==null||donvi==undefined) {
         alert("Vui lòng nhập đơn vị!")
@@ -85,3 +75,18 @@ function SendInfo() {
     //         );
     // };
 }
+const validateEmail = (email) => {
+    return String(email)
+        .toLowerCase()
+        .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+};
+
+const validatePhone = (phone) => {
+    return String(phone)
+        .toLowerCase()
+        .match(
+            /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g
+        );
+};
